@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+    <header>
+        <h1>JS - Funkcje</h1>
+        <main>
+            <script>
+                function circleArea(){
+                    let a = parseFloat(prompt("Podaj promień"))
+
+                    let wynik = 2 * Math.PI * a;
+                    document.write('Pole koła o promieniu ', a, ' wynosi ', wynik)
+                }
+                circleArea()
+               
+
+                function rectangleArea(a = 1, b = 1) {
+                    let area = a * b;
+                    document.write(`Pole prostokąta o bokach: ${a} i ${b} wynosi: ${area}`)
+                }
+                rectangleArea(20, 50);
+                rectangleArea()
+
+
+                function generateRandom(min, max) {
+                    return Math.floor(Math.random() * (max - min + 1) + min);
+                }
+
+                let numbers = [];
+                for (let i = 0; i < 10; i++) {
+                numbers.push(generateRandom(1, 20));
+                }
+
+                let countGreaterThan10 = numbers.filter(num => num > 10).length;
+
+                if (countGreaterThan10 >= 5) {
+                document.body.innerHTML = 'udało się';
+                } else {
+                   console.log('niestety nie');
+                }
+
+
+
+
+            </script>
+        </main>
+    </header>
+</body>
+</html>
